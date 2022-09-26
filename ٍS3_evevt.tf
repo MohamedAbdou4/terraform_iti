@@ -15,7 +15,7 @@ resource "aws_s3_bucket_notification" "bucket_notification" {
   bucket = data.aws_s3_bucket.my_objects.id
 
   lambda_function {
-    lambda_function_arn = aws_lambda_function.test_lambda.arn
+    lambda_function_arn = aws_lambda_function.terraform_lambda_func.arn
     events              = ["s3:ObjectCreated:*"]
   }
 }
